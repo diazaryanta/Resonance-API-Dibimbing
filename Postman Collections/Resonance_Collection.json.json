@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "79601926-a21a-4589-b987-09ad1af6eeef",
+		"name": "Resonance Dibimbing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "35ac892f-5772-4519-b264-feaf9cc3434e",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"var token = jsonData.token;",
+									"",
+									"pm.environment.set(\"access_token\", token);",
+									"",
+									"console.log(\"Token berhasil diperbarui: \" + token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "9c4e82f7-35a0-4c18-b202-86301a6272f3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usernameOrEmail\": \"admin@example.com\",\n  \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}login"
+					},
+					"response": []
+				}
+			],
+			"id": "a40ada67-2380-4b02-a20b-b8937b0781df"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create Account",
+					"id": "8c1d17b6-25e8-4258-9ca9-422034a6ba1e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"diaaaz\",\n  \"email\": \"diazaryanta@example.com\",\n  \"date\": \"2026-03-12T19:14:17.272Z\",\n  \"sendEmail\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}createUser"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"id": "f2fde08b-1142-41c3-ac09-2d4bb875ea55",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"\",\n  \"password\": \"diaz\",\n  \"passwordConfirmation\": \"diaz\",\n  \"date\": \"2026-03-13T09:21:39.994Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}verifyToken"
+					},
+					"response": []
+				},
+				{
+					"name": "Send Verification Token",
+					"id": "3bd09cf9-601e-49a5-a027-681b47b4a693",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"diazaryanta@example.com\",\n  \"date\": \"2026-03-13T09:23:39.159Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}sendVerificationToken"
+					},
+					"response": []
+				}
+			],
+			"id": "980a1f31-700e-43c3-abab-5e37a65a4e00"
+		},
+		{
+			"name": "Utils",
+			"item": [
+				{
+					"name": "get Server Time",
+					"id": "07fafe31-4f73-45c8-aa7f-8c39ab225941",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}getServerTime?Hello=saya Diaz",
+							"host": [
+								"{{baseURL}}getServerTime"
+							],
+							"query": [
+								{
+									"key": "Hello",
+									"value": "saya Diaz"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d3ffa0d5-2287-4d1e-9d89-1209b9c860c5"
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "create ticket",
+					"id": "936e226e-6d89-4a9e-9afb-1bfdaa540416",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"EMBEGE\",\n  \"description\": \"Makanan Bergiji Geratisss\",\n  \"attachment\": \"\",\n  \"isPublic\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}createTicket"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "e74d7dc5-ac0f-4ce2-8f5a-75ffae4dea0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get ticket by id",
+					"id": "7d54bc5f-3540-43f7-8c7a-079576f4e088",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}ticketById?id=cmmradp7r0017lh04kcrabocf",
+							"host": [
+								"{{baseURL}}ticketById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "cmmradp7r0017lh04kcrabocf"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "101e7165-dc5d-4d4b-a280-d3419e5a0268"
+		}
+	]
+}
