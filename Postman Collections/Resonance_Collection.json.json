@@ -192,18 +192,6 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
-					"id": "e74d7dc5-ac0f-4ce2-8f5a-75ffae4dea0d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
 					"name": "get ticket by id",
 					"id": "7d54bc5f-3540-43f7-8c7a-079576f4e088",
 					"protocolProfileBehavior": {
