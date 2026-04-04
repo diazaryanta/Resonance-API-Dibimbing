@@ -63,7 +63,7 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "Create Account",
+					"name": "Create a new User",
 					"id": "8c1d17b6-25e8-4258-9ca9-422034a6ba1e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
