@@ -64,6 +64,23 @@
 			"item": [
 				{
 					"name": "Create a new User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "caeecd29-b324-4a75-b78c-916103ce81c7",
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"EMAIL\", jsonData.email);",
+									"pm.environment.set(\"ID, jsonData.id\");"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "8c1d17b6-25e8-4258-9ca9-422034a6ba1e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -73,7 +90,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"diaaaz\",\n  \"email\": \"diazaryanta@example.com\",\n  \"date\": \"2026-03-12T19:14:17.272Z\",\n  \"sendEmail\": false\n}",
+							"raw": "{\n  \"name\": \"halo diaz\",\n  \"email\": \"diazcoba@gmail.com\",\n  \"date\": \"2026-03-12T19:14:17.272Z\",\n  \"sendEmail\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
