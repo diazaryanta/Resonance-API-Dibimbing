@@ -144,6 +144,18 @@
 						"url": "{{baseURL}}sendVerificationToken"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "aa137ab7-199b-45a6-96e8-913c3cb66d25",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "980a1f31-700e-43c3-abab-5e37a65a4e00"
